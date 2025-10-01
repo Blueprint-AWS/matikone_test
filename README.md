@@ -1,2 +1,2 @@
 # matikone_test
-テストです
+MysqlのパスワードはMATIKONE_TEST/ocker-compose.ymlにあります。
