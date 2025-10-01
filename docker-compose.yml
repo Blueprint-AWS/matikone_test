@@ -1,0 +1,30 @@
+services:
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+    - ./front/front_next:/app
+    environment:
+      NODE_ENV: development
+
+  back:
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    ports:
+    - "8000:8000"
+    volumes:
+    - ./back/back_express:/app
+    environment:
+      NODE_ENV: development
+
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: KTCpass25
+    ports:
+    - "3306:3306"
