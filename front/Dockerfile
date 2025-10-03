@@ -1,11 +1,11 @@
 FROM node:20
 WORKDIR /app
 
-COPY ./front_next/package*.json ./
+COPY ./front_next ./
+
+RUN npm install
 
 
-
-COPY . .
 
 CMD ["npm","run","dev"]
 
